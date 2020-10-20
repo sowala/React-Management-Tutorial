@@ -37,7 +37,7 @@ app.post('/api/customers', upload.single('image'), (req, res)=>{
   //upload.single('image') >> FormData 에 변수값을 따라간다.
   // console.log(req.body)
   let sql = 'INSERT INTO customer VALUES(null, ?, ?, ?, ? ,?)';
-  let image = '/image/' + req.file.filename;
+  let image = 'http://localhost:5000/image/' + req.file.filename;
   let name = req.body.name;
   let birthday = req.body.birthday;
   let job = req.body.job;
